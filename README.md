@@ -2,27 +2,32 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![AI Search](https://img.shields.io/badge/AI-A*_Search-2E7D32?style=for-the-badge)
-![GUI](https://img.shields.io/badge/GUI-Tkinter-1565C0?style=for-the-badge)
+![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1565C0?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-In_Development-F9A825?style=for-the-badge)
 
-> A GUI-based AI route planning system that uses A* search to visualize optimal delivery paths, obstacles, explored nodes, and route cost.
+> A GUI-based AI route planning system that uses A* search to visualize optimal delivery paths, obstacles, explored nodes, weighted roads, and route cost.
 
 ## Overview
 
-Delivery Route Optimizer is an Artificial Intelligence course project focused on route planning and pathfinding. The system will allow users to place a start point, delivery destination, obstacles, and weighted roads on a grid-based map.
+Delivery Route Optimizer is an Artificial Intelligence course project focused on route planning and pathfinding. The system allows users to place a start point, multiple delivery destinations, obstacles, and weighted roads on a grid-based map.
 
-The application will then run the A* search algorithm, visualize the search process, and highlight the best route found.
+The application runs A* search, visualizes explored nodes, highlights the final route, and compares a simple nearest-stop delivery route with a locally improved route.
 
-## Planned Features
+## Features
 
 - Interactive desktop grid interface
-- Start and destination node selection
+- Start and multiple delivery node selection
 - Obstacle placement
 - Weighted or high-cost road support
 - A* search pathfinding
+- Manhattan and Euclidean heuristic options
 - Step-by-step explored node visualization
 - Final route highlighting
-- Route statistics including cost, path length, and visited nodes
+- Multi-delivery route planning
+- Nearest-route comparison with local-search improvement
+- Route statistics including cost, path length, visited nodes, runtime, and delivery order
+- Demo map and random map generation
+- Adjustable animation speed
 
 ## AI Technique
 
@@ -40,15 +45,16 @@ Where:
 - `h(n)` is the estimated cost from the current node to the goal
 - `f(n)` is the total estimated route cost
 
-This makes A* suitable for efficient shortest-path search in grid-based maps and delivery route planning problems.
+For multiple delivery points, the app builds a route using repeated A* searches, then applies a lightweight local-search improvement to reduce total route cost.
 
 ## Tech Stack
 
 | Area | Technology |
 | --- | --- |
 | Language | Python |
-| GUI | Tkinter |
+| GUI | CustomTkinter + Tkinter Canvas |
 | Algorithm | A* Search |
+| Heuristics | Manhattan, Euclidean |
 | Data Model | Grid / Graph |
 | Project Type | AI route planning and visualization |
 
@@ -56,31 +62,45 @@ This makes A* suitable for efficient shortest-path search in grid-based maps and
 
 ```text
 delivery-route-optimizer/
-├── assets/
-│   └── icons/
-├── docs/
-│   └── screenshots/
-├── src/
-│   ├── models/
-│   ├── pathfinding/
-│   ├── ui/
-│   └── utils/
-├── tests/
-├── .gitignore
-└── README.md
+|-- assets/
+|   `-- icons/
+|-- docs/
+|   `-- screenshots/
+|-- src/
+|   |-- models/
+|   |-- pathfinding/
+|   |-- ui/
+|   `-- utils/
+|-- tests/
+|-- main.py
+|-- .gitignore
+`-- README.md
 ```
 
 ## Folder Purpose
 
 | Folder | Purpose |
 | --- | --- |
-| `src/pathfinding/` | A* algorithm and route reconstruction logic |
-| `src/models/` | Grid, cell, node, and route data structures |
-| `src/ui/` | Tkinter windows, canvas, controls, and visualization |
-| `src/utils/` | Shared constants and helper functions |
+| `src/pathfinding/` | A* algorithm, route reconstruction, and delivery route optimization |
+| `src/models/` | Grid and route state helpers |
+| `src/ui/` | Tkinter window, canvas, controls, and visualization |
+| `src/utils/` | Shared constants |
 | `assets/` | Icons and visual assets |
 | `docs/` | Reports, screenshots, and documentation |
 | `tests/` | Unit tests for algorithm and project logic |
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+## How to Test
+
+```bash
+python -m unittest discover -s tests
+```
 
 ## Development Roadmap
 
@@ -90,7 +110,8 @@ delivery-route-optimizer/
 4. Add obstacle and weighted-road editing
 5. Animate explored nodes and final path
 6. Display route statistics
-7. Add screenshots and final report
+7. Add multi-delivery route optimization
+8. Add screenshots and final report
 
 ## Team
 
@@ -103,4 +124,3 @@ delivery-route-optimizer/
 
 **CS 2005: Artificial Intelligence**  
 AI Course Project
-
