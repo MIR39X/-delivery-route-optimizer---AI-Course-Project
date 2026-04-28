@@ -1,0 +1,18 @@
+# Local Codex workspace files
+assistant-workspace/
+memory/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Editor and OS files
+.vscode/
+.idea/
+Desktop.ini
+Thumbs.db
+
