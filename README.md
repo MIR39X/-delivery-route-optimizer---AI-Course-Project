@@ -3,17 +3,17 @@
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![AI Search](https://img.shields.io/badge/AI-A*_Search-2E7D32?style=for-the-badge)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1565C0?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-In_Development-F9A825?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Fully_Developed-2E7D32?style=for-the-badge)
 
 > A GUI-based AI route planning system that uses A* search to visualize optimal delivery paths, obstacles, explored nodes, weighted roads, and route cost.
 
 ## Overview
 
-Delivery Route Optimizer is an Artificial Intelligence course project focused on route planning and pathfinding. The system allows users to place a start point, multiple delivery destinations, obstacles, and weighted roads on a grid-based map.
+Delivery Route Optimizer is a fully developed Artificial Intelligence course project focused on route planning and pathfinding. The system allows users to place a start point, multiple delivery destinations, obstacles, and weighted roads on a grid-based map.
 
 The application runs A* search, visualizes explored nodes, highlights the final route, and compares a simple nearest-stop delivery route with a locally improved route.
 
-## Features
+## Completed Features
 
 - Interactive desktop grid interface
 - Start and multiple delivery node selection
@@ -28,6 +28,8 @@ The application runs A* search, visualizes explored nodes, highlights the final 
 - Route statistics including cost, path length, visited nodes, runtime, and delivery order
 - Demo map and random map generation
 - Adjustable animation speed
+- Modern CustomTkinter interface with generated map and icon assets
+- Unit-tested pathfinding behavior
 
 ## AI Technique
 
@@ -102,16 +104,9 @@ python main.py
 python -m unittest discover -s tests
 ```
 
-## Development Roadmap
+## Project Status
 
-1. Implement the A* pathfinding algorithm
-2. Create grid and cell models
-3. Build the Tkinter grid interface
-4. Add obstacle and weighted-road editing
-5. Animate explored nodes and final path
-6. Display route statistics
-7. Add multi-delivery route optimization
-8. Add screenshots and final report
+This project is fully developed for the CS 2005 Artificial Intelligence course submission. The main implementation, GUI, route visualization, generated assets, and algorithm tests are complete.
 
 ## Team
 
